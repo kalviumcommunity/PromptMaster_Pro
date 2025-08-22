@@ -156,3 +156,27 @@ Now review the following Java code:
 public int Subtract(int a, int b) {
     return a + b; // intended to be subtraction
 }
+
+
+* Provides **one guiding example** to set the response pattern.
+* Ensures the AI generates **consistent, structured outputs**.
+* Reduces ambiguity compared to zero-shot prompting.
+
+## 🎯 Multi-Shot Prompting  
+
+In CodeSage, we apply **Multi-Shot Prompting**, where the AI is provided with **multiple examples** before being asked to solve the real task.  
+This method ensures the AI clearly understands the **pattern, structure, and expectations** of the output.  
+
+### 🔹 Multi-Shot Prompt  
+
+**System Prompt:**  
+You are an AI code reviewer. Analyze the given code, detect bugs, and suggest improvements.  
+Always return results in JSON format with three fields: `issues`, `suggestions`, and `overall_feedback`.  
+
+**User Prompt (with multiple examples):**  
+
+Example 1 (Python):  
+```python
+def add(a, b):
+    return a - b  # intended to be addition
+````
