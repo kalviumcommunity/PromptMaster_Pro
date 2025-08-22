@@ -93,3 +93,30 @@ The name comes from ML terminology:
 
 ---
 
+- **Zero-shot learning** → No examples, just instructions.
+
+---
+
+### 🔹 System Prompt  
+
+You are an AI Code Reviewer. Your role is to analyze the given code, identify bugs, suggest improvements, and provide structured feedback. Always return results in a JSON format containing:  
+
+- `issues`: List of detected bugs or problems  
+- `suggestions`: Recommended improvements  
+- `overall_feedback`: Summary of code quality  
+
+### 🔹 User Prompt  
+
+Review the following Python code and provide feedback as per the defined schema:  
+
+```python
+def add_numbers(a, b):
+    return a - b  # intended to be addition
+````
+
+### 📌 RTFC Framework Usage
+
+* **R (Role):** Defined in the system prompt as a code reviewer.
+* **T (Task):** Analyze code, detect bugs, and suggest improvements.
+* **F (Format):** Responses must follow a structured JSON output.
+* **C (Context):** The provided code snippet and programming language.
