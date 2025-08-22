@@ -267,3 +267,38 @@ You are a creative writing assistant. Generate unique story continuations.
 
 ✅ **Summary:**  
 Top-K Sampling balances **determinism and creativity** by controlling the number of candidate tokens considered at each step.  
+
+## 🎯 Top-P (Nucleus Sampling)
+
+In CodeSaga, we also apply **Top-P (Nucleus Sampling)**, a decoding strategy that dynamically chooses from the **smallest possible set of tokens** whose cumulative probability is greater than or equal to **P**.  
+This ensures the model adapts flexibly depending on the probability distribution of the next tokens.
+
+Top-P helps generate **natural, context-aware responses** while avoiding both excessive randomness and rigid determinism.
+
+### 🔹 How Top-P Works
+- The AI sorts all possible next tokens by probability.  
+- It then selects the **smallest subset of tokens** whose combined probability ≥ **P** (e.g., 0.9).  
+- The next token is sampled randomly from this “nucleus” set.  
+- **Lower P values (e.g., 0.3)** → more focused, safer, less diverse responses.  
+- **Higher P values (e.g., 0.9)** → more creative, open-ended outputs.  
+
+### ⚙️ Example
+
+**System Prompt:**  
+You are a creative writing assistant. Generate unique story continuations.  
+
+**User Input:**  
+*"The robot looked at the stars and realized..."*  
+
+**Top-P = 0.3:**  
+*"The robot looked at the stars and realized it was alone."*  
+
+**Top-P = 0.9:**  
+*"The robot looked at the stars and realized the universe might be waiting for it."*  
+*"The robot looked at the stars and realized its journey had only just begun."*  
+*"The robot looked at the stars and realized it could dream of distant galaxies."*  
+
+---
+
+✅ **Summary:**  
+Top-P (Nucleus Sampling) balances **quality and diversity** by sampling from the most **probable subset of tokens**, adapting more flexibly than Top-K.
