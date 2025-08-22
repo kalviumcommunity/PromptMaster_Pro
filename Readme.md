@@ -120,3 +120,39 @@ def add_numbers(a, b):
 * **T (Task):** Analyze code, detect bugs, and suggest improvements.
 * **F (Format):** Responses must follow a structured JSON output.
 * **C (Context):** The provided code snippet and programming language.
+
+
+* **T (Task):** Analyze code, detect bugs, and suggest improvements.
+* **F (Format):** Responses must follow a structured JSON output.
+* **C (Context):** The provided code snippet and programming language.
+
+### 🔹 One-Shot Prompt  
+
+**System Prompt:**  
+You are an AI code reviewer. Analyze the given code, detect bugs, and suggest improvements.  
+Always return results in JSON format with three fields: `issues`, `suggestions`, and `overall_feedback`.  
+
+**User Prompt (with one example):**  
+
+Example Input (Python):  
+```python
+def divide(a, b):
+    return a * b  # intended to be division
+````
+
+Example Expected Output (JSON):
+
+```json
+{
+  "issues": ["The operator used is multiplication instead of division."],
+  "suggestions": ["Replace '*' with '/' to correctly divide the numbers."],
+  "overall_feedback": "Logic error detected in the function implementation."
+}
+```
+
+Now review the following Java code:
+
+```java
+public int Subtract(int a, int b) {
+    return a + b; // intended to be subtraction
+}
