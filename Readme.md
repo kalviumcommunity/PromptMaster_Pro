@@ -232,3 +232,38 @@ def is_even(n):
 
 To ensure **CodeSage** works reliably, we created an **evaluation pipeline** with:  
 - A dataset of **5+ sample code snippets** 
+
+## 🔢 Top-K Sampling
+
+In CodeSaga, we also apply **Top-K Sampling**, a decoding strategy that helps the AI balance **creativity** and **relevance** in its responses.  
+Instead of always picking the single most likely token, the AI samples from the **top K most probable tokens**, introducing controlled randomness.  
+
+This technique ensures responses are **diverse, less repetitive, and contextually appropriate**.
+
+### 🔹 How Top-K Works
+- The AI generates probabilities for all possible next tokens.  
+- It then selects only the **top K tokens** with the highest probability.  
+- The next token is **sampled randomly** from this reduced set.  
+- Lower values of **K** → more focused, deterministic outputs.  
+- Higher values of **K** → more creative, varied responses.  
+
+### ⚙️ Example
+
+**System Prompt:**  
+You are a creative writing assistant. Generate unique story continuations.  
+
+**User Input:**  
+*"The robot looked at the stars and realized..."*  
+
+**Top-K = 1 (Greedy Search):**  
+*"The robot looked at the stars and realized it was alone."*  
+
+**Top-K = 5:**  
+*"The robot looked at the stars and realized it could dream of distant worlds."*  
+*"The robot looked at the stars and realized a journey awaited."*  
+*"The robot looked at the stars and realized humanity’s hope was still alive."*  
+
+---
+
+✅ **Summary:**  
+Top-K Sampling balances **determinism and creativity** by controlling the number of candidate tokens considered at each step.  
