@@ -223,3 +223,12 @@ def is_even(n):
         return True
     return False
 ````
+
+* Ensures **deeper reasoning** behind feedback.
+* Reduces **false positives/negatives** in bug detection.
+* Provides **explainable AI** code reviews with accurate fixes.
+
+## 🧪 Evaluation Dataset & Testing Framework  
+
+To ensure **CodeSage** works reliably, we created an **evaluation pipeline** with:  
+- A dataset of **5+ sample code snippets** 
