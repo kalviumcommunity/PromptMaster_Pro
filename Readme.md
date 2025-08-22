@@ -180,3 +180,20 @@ Example 1 (Python):
 def add(a, b):
     return a - b  # intended to be addition
 ````
+
+* Gives the AI **multiple reference patterns** to ensure consistent results.
+* Helps in **complex tasks** where one example isn’t enough.
+* Reduces errors and improves **accuracy of code reviews**.
+* Reduces errors and improves **accuracy of code reviews**.
+## 🎯 Dynamic Prompting  
+In CodeSage, we use **Dynamic Prompting**, where the prompt is automatically adapted based on the **user’s input context** (e.g., programming language, code style, or desired output format).  
+This makes the system **flexible and personalized**, instead of relying on fixed instructions.  
+### 🔹 Dynamic Prompt Example  
+**System Prompt (Template):**  
+You are an AI code reviewer. Analyze the given code in **{{language}}**, detect bugs, and suggest improvements.  
+Always return results in JSON format with three fields: `issues`, `suggestions`, and `overall_feedback`.  
+**User Prompt (Generated Dynamically):**  
+Review the following **{{language}}** code:  
+```{{language}}
+{{code_snippet}}
+````
