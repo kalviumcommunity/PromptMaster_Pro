@@ -197,3 +197,29 @@ Review the following **{{language}}** code:
 ```{{language}}
 {{code_snippet}}
 ````
+
+
+* Automatically adapts prompts to **any programming language**.
+* Makes the system more **scalable and user-specific**.
+* Reduces manual work while ensuring **consistent structured outputs**.
+* Reduces manual work while ensuring **consistent structured outputs**.
+
+## 🎯 Chain-of-Thought Prompting  
+
+In CodeSage, we apply **Chain-of-Thought (CoT) Prompting**, where the AI is encouraged to **reason step by step** before providing the final answer.  
+This helps the system explain *why* a piece of code is incorrect, not just point out the issue.  
+
+### 🔹 Chain-of-Thought Prompt  
+
+**System Prompt:**  
+You are an AI code reviewer. Analyze the given code step by step (reasoning internally), then provide your final answer only in JSON format with three fields: `issues`, `suggestions`, and `overall_feedback`. Do not reveal the reasoning steps to the user.  
+
+**User Prompt:**  
+Review the following Python code:  
+
+```python
+def is_even(n):
+    if n % 2 == 1:
+        return True
+    return False
+````
