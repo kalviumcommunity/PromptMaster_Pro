@@ -68,3 +68,25 @@ Ground AI responses in your data:
 ---
 
 *PromptMaster Pro - Where better prompts meet better results*
+
+## 📞 Questions?
+## 🧠 Zero-Shot Prompting
+
+Feel free to open an issue or suggest new features (like bill reminder notifications!).
+## 🔹 What is Zero-Shot Prompting?
+
+**Zero-shot prompting** means giving an AI model (like GPT) a **task without providing any examples** beforehand.  
+You only describe what you want in natural language, and the model uses its pretraining knowledge to respond correctly.  
+
+👉 In short: **“Do this task, even though I haven’t shown you any examples.”**
+
+---
+
+## 🔹 Why "Zero-Shot"?
+
+The name comes from ML terminology:
+
+- **Few-shot learning** → Provide a few examples before asking the model to generalize.  
+- **Zero-shot learning** → No examples, just instructions.
+
+---
