@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromptMaster Pro 🚀</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-rocket"></i> PromptMaster Pro</h1>
+            <p>Your Smart Toolkit for Perfecting AI Prompts</p>
+        </header>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-magic"></i> Prompt Types</h3>
+                    <div class="prompt-type" data-type="zero-shot">
+                        <i class="fas fa-bolt"></i>
+                        <span>Zero-Shot</span>
+                    </div>
+                    <div class="prompt-type" data-type="one-shot">
+                        <i class="fas fa-star"></i>
+                        <span>One-Shot</span>
+                    </div>
+                    <div class="prompt-type" data-type="multi-shot">
+                        <i class="fas fa-stars"></i>
+                        <span>Multi-Shot</span>
+                    </div>
+                    <div class="prompt-type" data-type="chain-of-thought">
+                        <i class="fas fa-brain"></i>
+                        <span>Chain-of-Thought</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-history"></i> Recent Prompts</h3>
+                    <div id="recent-prompts" class="recent-list"></div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3><i class="fas fa-upload"></i> RAG Documents</h3>
+                    <input type="file" id="rag-file" accept=".txt,.pdf,.docx" style="display: none;">
+                    <button onclick="document.getElementById('rag-file').click()" class="upload-btn">
+                        <i class="fas fa-upload"></i> Upload Document
+                    </button>
+                    <div id="upload-status"></div>
+                </div>
+            </div>
+
+            <div class="content-area">
+                <div class="prompt-editor">
+                    <div class="editor-header">
+                        <h3><i class="fas fa-edit"></i> Prompt Editor</h3>
+                        <div class="format-selector">
+                            <label>Output Format:</label>
+                            <select id="output-format">
+                                <option value="text">Plain Text</option>
+                                <option value="json">JSON</option>
+                                <option value="markdown">Markdown</option>
+                                <option value="bullet">Bullet Points</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="role-input">
+                        <label>AI Role:</label>
+                        <input type="text" id="ai-role" placeholder="e.g., Helpful Assistant, Code Reviewer, Creative Writer" value="Helpful AI Assistant">
+                    </div>
+
+                    <div class="examples-input" id="examples-section" style="display: none;">
+                        <label>Examples:</label>
+                        <textarea id="examples" placeholder="Provide examples here..."></textarea>
+                    </div>
+
+                    <textarea id="prompt-input" placeholder="Enter your prompt here..." rows="6"></textarea>
+
+                    <div class="editor-actions">
+                        <button id="process-btn" onclick="processPrompt()">
+                            <i class="fas fa-cogs"></i> Process Prompt
+                        </button>
+                        <button id="clear-btn" onclick="clearEditor()">
+                            <i class="fas fa-trash"></i> Clear
+                        </button>
+                    </div>
+                </div>
+
+                <div class="results-section">
+                    <h3><i class="fas fa-chart-line"></i> Results</h3>
+                    <div id="results">
+                        <div class="empty-state">
+                            <i class="fas fa-comment-dots"></i>
+                            <p>Your AI responses will appear here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="analytics-panel">
+            <h3><i class="fas fa-chart-pie"></i> Analytics</h3>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="total-prompts">0</span>
+                    <span class="stat-label">Total Prompts</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="success-rate">100%</span>
+                    <span class="stat-label">Success Rate</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="avg-response">0s</span>
+                    <span class="stat-label">Avg Response</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
